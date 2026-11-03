@@ -1,0 +1,179 @@
+.hero {
+  padding-top: 64px;
+  padding-bottom: 96px;
+}
+
+.hero__grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 56px;
+  align-items: start;
+}
+
+.hero__greeting {
+  color: var(--color-accent);
+  font-size: 0.95rem;
+  margin-bottom: 12px;
+}
+
+.hero__name {
+  font-size: clamp(2.2rem, 1.6rem + 2.6vw, 3.4rem);
+  letter-spacing: -0.01em;
+}
+
+.hero__role {
+  margin-top: 20px;
+  font-size: 1.2rem;
+  color: var(--color-ink-soft);
+  font-family: var(--font-body);
+  font-weight: 400;
+}
+
+.hero__summary {
+  margin-top: 20px;
+  color: var(--color-ink-soft);
+}
+
+.hero__actions {
+  display: flex;
+  gap: 16px;
+  margin-top: 36px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 22px;
+  border-radius: var(--radius);
+  font-size: 0.95rem;
+  font-weight: 500;
+  border: 1px solid transparent;
+  transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+.btn:hover {
+  text-decoration: none;
+}
+
+.btn--primary {
+  background: var(--color-accent);
+  color: var(--color-bg);
+}
+
+.btn--primary:hover {
+  opacity: 0.88;
+}
+
+.btn--ghost {
+  border-color: var(--color-line);
+  color: var(--color-ink);
+}
+
+.btn--ghost:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+}
+
+.status-card {
+  background: var(--color-bg-raised);
+  border: 1px solid var(--color-line);
+  border-radius: 6px;
+  overflow: hidden;
+  font-size: 0.88rem;
+}
+
+.status-card__bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--color-line);
+}
+
+.dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.dot--red {
+  background: #e0716a;
+}
+
+.dot--yellow {
+  background: #e3b341;
+}
+
+.dot--green {
+  background: var(--color-accent);
+}
+
+.status-card__title {
+  margin-left: 8px;
+  color: var(--color-muted);
+  font-size: 0.8rem;
+}
+
+.status-card__body {
+  margin: 0;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.status-card__row {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.status-card__row dt {
+  color: var(--color-muted);
+  font-size: 0.78rem;
+}
+
+.status-card__row dd {
+  margin: 0;
+  color: var(--color-ink);
+}
+
+.status-dot {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  margin-right: 8px;
+}
+
+@media (max-width: 800px) {
+  .hero__grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .hero__actions {
+    flex-direction: column;
+  }
+
+  .btn {
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding-top: 40px;
+    padding-bottom: 64px;
+  }
+
+  .hero__role {
+    font-size: 1.05rem;
+  }
+
+  .status-card__body {
+    padding: 16px;
+    gap: 14px;
+  }
+}

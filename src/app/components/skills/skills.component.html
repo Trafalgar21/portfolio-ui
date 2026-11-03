@@ -1,0 +1,19 @@
+<section id="skills" class="skills">
+  <div class="wrap">
+    <h2 class="section-heading"><span class="section-heading__index mono">02</span> Skills &amp; tools</h2>
+    <p class="section-lede">Grouped by where they sit in a system rather than ranked by preference.</p>
+
+    <div class="skills__grid">
+      @for (group of groups; track group.label) {
+        <div class="skills__group">
+          <h3 class="skills__group-label mono">{{ group.label }}</h3>
+          <ul>
+            @for (item of group.items; track item) {
+              <li>{{ item }}</li>
+            }
+          </ul>
+        </div>
+      }
+    </div>
+  </div>
+</section>

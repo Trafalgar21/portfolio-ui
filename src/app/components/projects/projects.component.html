@@ -1,0 +1,27 @@
+<section id="projects" class="projects">
+  <div class="wrap">
+    <h2 class="section-heading"><span class="section-heading__index mono">03</span> Selected projects</h2>
+    <p class="section-lede">Systems and services, mostly the kind users never see directly. Placeholder detail below — happy to walk through the design decisions behind any of these.</p>
+
+    <ul class="projects__list">
+      @for (project of projects; track project.name) {
+        <li class="project">
+          <div class="project__meta mono">
+            <span class="project__year">{{ project.year }}</span>
+          </div>
+          <div class="project__body">
+            <h3 class="project__name">
+              <a [href]="project.link">{{ project.name }}</a>
+            </h3>
+            <p class="project__description">{{ project.description }}</p>
+            <ul class="project__tags mono">
+              @for (tag of project.tags; track tag) {
+                <li>{{ tag }}</li>
+              }
+            </ul>
+          </div>
+        </li>
+      }
+    </ul>
+  </div>
+</section>

@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Thomas Oviedo — Backend Engineer</title>
+  <meta name="description" content="Portfolio of Jordan Cole, a backend engineer specializing in APIs, data systems, and infrastructure.">
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <script>
+    // Applied before Angular boots so the page never flashes the wrong theme.
+    (function () {
+      try {
+        var stored = localStorage.getItem('portfolio-theme');
+        var theme = stored === 'light' ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', theme);
+      } catch (e) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      }
+    })();
+  </script>
+</head>
+<body>
+  <app-root></app-root>
+</body>
+</html>
+

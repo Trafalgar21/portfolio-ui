@@ -1,0 +1,140 @@
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: color-mix(in srgb, var(--color-bg) 88%, transparent);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.nav--scrolled {
+  border-bottom-color: var(--color-line);
+}
+
+.nav__inner {
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding: 18px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav__mark {
+  font-size: 1.05rem;
+  color: var(--color-ink);
+}
+
+.nav__mark::before {
+  content: '> ';
+  color: var(--color-accent);
+}
+
+.nav__mark:hover {
+  text-decoration: none;
+  color: var(--color-accent);
+}
+
+.nav__links {
+  display: flex;
+  gap: 28px;
+}
+
+.nav__links a {
+  color: var(--color-ink-soft);
+  font-size: 0.9rem;
+}
+
+.nav__links a:hover {
+  color: var(--color-accent);
+  text-decoration: none;
+}
+
+.nav__actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius);
+  border: 1px solid var(--color-line);
+  background: var(--color-bg-raised);
+  color: var(--color-ink-soft);
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+.theme-toggle:hover {
+  color: var(--color-accent);
+  border-color: var(--color-accent);
+}
+
+.nav__toggle {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  width: 44px;
+  height: 44px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  flex-shrink: 0;
+  padding: 0;
+}
+
+.nav__toggle span {
+  width: 20px;
+  height: 1.5px;
+  background: var(--color-ink);
+}
+
+.nav__mobile {
+  display: none;
+}
+
+@media (max-width: 800px) {
+  .nav__links {
+    display: none;
+  }
+
+  .nav__toggle {
+    display: flex;
+  }
+
+  .nav__mobile {
+    display: flex;
+    flex-direction: column;
+    padding: 8px var(--gutter) 24px;
+    border-top: 1px solid var(--color-line);
+  }
+
+  .nav__mobile a {
+    padding: 14px 0;
+    color: var(--color-ink-soft);
+    border-bottom: 1px solid var(--color-line);
+  }
+}
+
+@media (max-width: 480px) {
+  .nav__inner {
+    padding: 14px var(--gutter);
+  }
+
+  .nav__mark {
+    font-size: 0.95rem;
+  }
+
+  .nav__actions {
+    gap: 4px;
+  }
+}
